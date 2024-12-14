@@ -6,9 +6,14 @@
         <field name="model">school.profile</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="name" string="School Name"/>
                 <field name="email"/>
                 <field name="phone"/>
+                <field name="address" string="School Address"/>
+                <field name="offline_class" string="Virtual Class Support?"/>
+                <field name="establish_date"/>
+                <field name="school_rank"/>
+                <field name="result"/>
             </tree>
         </field>
     </record>
@@ -20,14 +25,37 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name" placeholder="SCHOOL NAME" style="height:40px"/>
-                        <field name="email"/>
-                        <field name="phone"/>
+                        <group>
+                            <!-- School Name Field with styling -->
+                            <field name="name" string="School Name" placeholder="Enter School Name"/>
+
+                            <!-- Email Field -->
+                            <field name="email" placeholder="abc@gmail.com"/>
+
+
+                            <!-- Phone Field -->
+                            <field name="phone" placeholder="Enter Phone Number"/>
+
+                            <field name="offline_class" string="Virtual Class Support?"/>
+
+                            <!-- School Rank Field with Placeholder -->
+                            <field name="school_rank" placeholder="Enter School Rank"/>
+
+                            <!-- Result Field with Placeholder -->
+                            <field name="result" placeholder="Enter Result"/>
+
+                            <field name="address" placeholder="Enter Address"/>
+                        </group>
+                        <group>
+                            <field name="establish_date"/>
+                            <field name="open_date"/>
+                        </group>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
+
 
     <record id="action_school_profile_menu" model="ir.actions.act_window">
         <field name="name">School Profile</field>
