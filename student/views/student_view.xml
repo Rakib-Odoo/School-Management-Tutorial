@@ -10,9 +10,12 @@
                         <field name="name"/>
                         <field name="school_id"/>
                         <field name="is_virtual_class"/>
+                        <field name="currency_id"/>
+                        <field name="student_fees"/>
                         <field name="school_address"/>
 <!--                        <field name="hobby_list" widget="many2many_tags"/>-->
                         <field name="hobby_list" widget="many2many_checkboxes"/>
+                        <field name="ref_id"/>
                     </group>
                 </sheet>
             </form>

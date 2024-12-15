@@ -11,6 +11,16 @@ class SchoolStudent(models.Model):
     hobby_list = fields.Many2many('student.hobby', 'school_hobby_rel', 'student_id', 'hobby_id', string='Hobbies')
     is_virtual_class = fields.Boolean(related='school_id.offline_class', string='Is Virtual Class')
     school_address = fields.Text(string='School Address', related='school_id.address')
+    currency_id = fields.Many2one('res.currency', string='Currency Type')
+    student_fees = fields.Monetary(string='Fees For Student',currency_field='currency_id')
+    # ref_id = fields.Reference([('school.profile'),
+    #                            ('account.move','Invoice')]
+    #                           , string='Fees Reference')
+    ref_id = fields.Reference(
+        [('school.profile', 'school.profile'),
+         ('account.move', 'account.move')],
+        string='Fees Reference'
+    )
 
     def write(self, values):
         result = super(SchoolStudent, self).write(values)

@@ -29,6 +29,7 @@ class SchoolProfile(models.Model):
     auto_rank = fields.Integer(string='Auto Rank', compute='compute_auto_rank')
 
 
+    # @api.onchange('fields name')
     @api.onchange('school_type')
     def compute_auto_rank(self):
         for rec in self:
