@@ -10,6 +10,7 @@
         'security/ir.model.access.csv',
         'views/menu_view.xml',
         'views/student_view.xml',
+        'views/hobby_view.xml',
     ],
     'installable': True,
     'application': True

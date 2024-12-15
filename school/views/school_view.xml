@@ -47,16 +47,14 @@
                             <field name="result" placeholder="Enter Result"/>
 
                             <field name="address" placeholder="Enter Address" string="School Address"/>
+                            <field name="school_description"/>
                         </group>
                         <group>
                             <field name="establish_date" placeholder="Enter Establishment Date" widget="date"/>
                             <field name="open_date" placeholder="Enter Open Date"/>
                             <field name="school_type" placeholder="Select School Type"/>
-                        </group>
-                        <group>
                             <field name="documents" filename="document_name"/>
                             <field name="document_name"/>
-                            <field name="school_description"/>
                         </group>
                     </group>
                 </sheet>

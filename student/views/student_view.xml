@@ -9,6 +9,7 @@
                     <group>
                         <field name="name"/>
                         <field name="school_id"/>
+                        <field name="hobby_list"/>
                     </group>
                 </sheet>
             </form>
