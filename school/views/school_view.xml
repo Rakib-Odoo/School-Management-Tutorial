@@ -14,6 +14,7 @@
                 <field name="establish_date"/>
                 <field name="school_rank"/>
                 <field name="result"/>
+                <field name="auto_rank"/>
             </tree>
         </field>
     </record>
@@ -55,6 +56,7 @@
                             <field name="school_type" placeholder="Select School Type"/>
                             <field name="documents" filename="document_name"/>
                             <field name="document_name"/>
+                            <field name="auto_rank"/>
                         </group>
                     </group>
                 </sheet>
