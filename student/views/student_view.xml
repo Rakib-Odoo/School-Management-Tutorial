@@ -9,7 +9,7 @@
                     <group>
                         <field name="name"/>
                         <field name="school_id"/>
-                        <field name="hobby_list"/>
+                        <field name="hobby_list" widget="many2many_tags"/>
                     </group>
                 </sheet>
             </form>
