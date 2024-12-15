@@ -9,6 +9,15 @@ class SchoolStudent(models.Model):
     name = fields.Char(string='Student Name')
     school_id = fields.Many2one('school.profile', string='School')
     hobby_list = fields.Many2many('student.hobby', 'school_hobby_rel', 'student_id', 'hobby_id', string='Hobbies')
+    is_virtual_class = fields.Boolean(related='school_id.offline_class', string='Is Virtual Class')
+    school_address = fields.Text(string='School Address', related='school_id.address')
+
+    def write(self, values):
+        result = super(SchoolStudent, self).write(values)
+        for record in self:
+            if not record.hobby_list:
+                raise UserError(_('Please select at least one hobby'))
+        return result
 
 
 class SchoolProfile(models.Model):

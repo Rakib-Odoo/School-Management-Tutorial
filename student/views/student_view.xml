@@ -9,6 +9,8 @@
                     <group>
                         <field name="name"/>
                         <field name="school_id"/>
+                        <field name="is_virtual_class"/>
+                        <field name="school_address"/>
 <!--                        <field name="hobby_list" widget="many2many_tags"/>-->
                         <field name="hobby_list" widget="many2many_checkboxes"/>
                     </group>
@@ -51,6 +53,8 @@
             <tree>
                 <field name="name"/>
                 <field name="school_id"/>
+                <field name="is_virtual_class"/>
+                <field name="school_address"/>
             </tree>
         </field>
     </record>
