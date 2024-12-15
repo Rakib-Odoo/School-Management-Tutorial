@@ -2,7 +2,7 @@
 <odoo>
     <menuitem id="school_root"
               name="School"
-              sequence="0"/>
+              sequence="5"/>
 
     <menuitem id="school_sub_menu"
               name="School Menu"
