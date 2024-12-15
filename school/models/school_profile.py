@@ -28,6 +28,8 @@ class SchoolProfile(models.Model):
     school_image = fields.Binary(string='Upload school Image', max_width=100, max_height=100)
     auto_rank = fields.Integer(string='Auto Rank', compute='compute_auto_rank')
 
+
+    @api.onchange('school_type')
     def compute_auto_rank(self):
         for rec in self:
             if rec.school_type == 'public':
