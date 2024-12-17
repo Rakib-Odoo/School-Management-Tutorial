@@ -31,6 +31,14 @@ class SchoolStudent(models.Model):
                 raise UserError(_('Please select at least one hobby'))
         return result
 
+    # override copy orm method
+    def copy(self, default=None):
+        if default is None:
+            default = {}
+        if 'name' not in default:
+            default['name'] = _("%s (copy)") % (self.name)
+        return super(SchoolStudent, self).copy(default)
+
 
 class SchoolProfile(models.Model):
     _inherit = 'school.profile'
