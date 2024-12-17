@@ -20,7 +20,7 @@
                         <!-- hobby list checkboxes vabe show korte -->
                         <field name="hobby_list" widget="many2many_checkboxes"/>
                         <field name="ref_id"/>
-                        <field name="active"/>
+                        <field name="active" invisible="1"/>
                     </group>
                 </sheet>
             </form>
@@ -40,14 +40,18 @@
 
     <record id="student_inherit_form_view" model="ir.ui.view">
         <field name="name">school.student.inherit.form</field>
+
         <!-- jei model ke inherit kora hbe tar model name dite -->
         <field name="model">school.profile</field>
+
         <!-- ref = module name.form er moddhe inherit korle form view id dite hbe -->
         <field name="inherit_id" ref="school.school_form_view"/>
         <field name="arch" type="xml">
+
             <!-- kon field er agey and pore bosbe tar jonno -->
             <field name="school_type" position="after">
-                <field name="school_list">
+                <field name="school_list" string="Student List">
+
                     <!-- add line create korte editable=button use kora hoi -->
                     <tree editable="button">
                         <field name="name"/>

@@ -14,55 +14,178 @@
                 <field name="establish_date"/>
                 <field name="school_rank"/>
                 <field name="result"/>
-                <field name="auto_rank"/>
             </tree>
         </field>
     </record>
+
+    <!--    <record id="school_form_view" model="ir.ui.view">-->
+    <!--        <field name="name">school.profile.form</field>-->
+    <!--        <field name="model">school.profile</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <form>-->
+    <!--                <sheet>-->
+    <!--                    <label for="school_image"/>-->
+    <!--                    <field name="school_image" widget="image" class="oe_avatar"/>-->
+    <!--                    <group>-->
+    <!--                        <group>-->
+    <!--                            &lt;!&ndash; School Name Field with styling &ndash;&gt;-->
+    <!--                            <field name="name" string="School Name" placeholder="Enter School Name"/>-->
+
+    <!--                            &lt;!&ndash; Email Field &ndash;&gt;-->
+    <!--                            <field name="email" placeholder="abc@gmail.com"/>-->
+
+
+    <!--                            &lt;!&ndash; Phone Field &ndash;&gt;-->
+    <!--                            <field name="phone" placeholder="Enter Phone Number"/>-->
+
+    <!--                            <field name="offline_class" string="Virtual Class Support?"/>-->
+
+    <!--                            &lt;!&ndash; School Rank Field with Placeholder &ndash;&gt;-->
+    <!--                            <field name="school_rank" placeholder="Enter School Rank"/>-->
+
+    <!--                            &lt;!&ndash; Result Field with Placeholder &ndash;&gt;-->
+    <!--                            <field name="result" placeholder="Enter Result"/>-->
+
+    <!--                            <field name="address" placeholder="Enter Address" string="School Address"/>-->
+    <!--                            <field name="school_description"/>-->
+    <!--                        </group>-->
+    <!--                        <group>-->
+    <!--                            <field name="establish_date" placeholder="Enter Establishment Date" widget="date"/>-->
+    <!--                            <field name="open_date" placeholder="Enter Open Date"/>-->
+    <!--                            <field name="school_type" placeholder="Select School Type"/>-->
+    <!--                            <field name="documents" filename="document_name"/>-->
+    <!--                            <field name="document_name"/>-->
+    <!--                        </group>-->
+    <!--                    </group>-->
+    <!--                </sheet>-->
+    <!--            </form>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+
+    <!--    <record id="school_form_view" model="ir.ui.view">-->
+    <!--        <field name="name">school.profile.form</field>-->
+    <!--        <field name="model">school.profile</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <form string="School Profile">-->
+    <!--                <sheet>-->
+    <!--                    <group>-->
+    <!--                        &lt;!&ndash; Image Section &ndash;&gt;-->
+    <!--                        <div style="margin-bottom: 15px;">-->
+    <!--                            <field name="school_image" widget="image" class="oe_avatar" string="School Image"/>-->
+    <!--                        </div>-->
+    <!--                    </group>-->
+
+    <!--                    &lt;!&ndash; Two-Column Grouping for Clean Layout &ndash;&gt;-->
+    <!--                    <group>-->
+    <!--                        <group string="General Information">-->
+    <!--                            <field name="name" string="School Name" placeholder="Enter School Name"/>-->
+    <!--                            <field name="email" string="Email" placeholder="abc@gmail.com"/>-->
+    <!--                            <field name="phone" string="Phone Number" placeholder="Enter Phone Number"/>-->
+    <!--                            <field name="offline_class" string="Virtual Class Support?"/>-->
+    <!--                            <field name="school_rank" string="Rank" placeholder="Enter School Rank"/>-->
+    <!--                            <field name="result" string="Result" placeholder="Enter Result"/>-->
+    <!--                            <field name="address" string="School Address" placeholder="Enter Address"/>-->
+    <!--                            <field name="school_description" string="Description"/>-->
+    <!--                        </group>-->
+
+    <!--                        <group string="Additional Details">-->
+    <!--                            <field name="establish_date" string="Establishment Date" widget="date"/>-->
+    <!--                            <field name="open_date" string="Open Date" widget="date"/>-->
+    <!--                            <field name="school_type" string="School Type" placeholder="Select School Type"/>-->
+    <!--                            <field name="documents" string="Documents" filename="document_name"/>-->
+    <!--                            <field name="document_name" string="Document Name"/>-->
+    <!--                        </group>-->
+    <!--                    </group>-->
+    <!--                </sheet>-->
+    <!--            </form>-->
+    <!--        </field>-->
+    <!--    </record>-->
 
     <record id="school_form_view" model="ir.ui.view">
         <field name="name">school.profile.form</field>
         <field name="model">school.profile</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="School Profile">
                 <sheet>
-                    <label for="school_image"/>
-                    <field name="school_image" widget="image" class="oe_avatar"/>
+                    <!-- Image Field -->
                     <group>
-                        <group>
-                            <!-- School Name Field with styling -->
+                        <field name="school_image" widget="image" class="oe_avatar" string="School Image"/>
+                    </group>
+
+                    <!-- Two-Column Layout: General and Additional Information -->
+                    <group>
+                        <!-- Left Column: General Information -->
+                        <group class="o_group_half">
                             <field name="name" string="School Name" placeholder="Enter School Name"/>
-
-                            <!-- Email Field -->
-                            <field name="email" placeholder="abc@gmail.com"/>
-
-
-                            <!-- Phone Field -->
-                            <field name="phone" placeholder="Enter Phone Number"/>
-
+                            <field name="email" string="Email" placeholder="abc@gmail.com"/>
+                            <field name="phone" string="Phone Number" placeholder="Enter Phone Number"/>
                             <field name="offline_class" string="Virtual Class Support?"/>
-
-                            <!-- School Rank Field with Placeholder -->
-                            <field name="school_rank" placeholder="Enter School Rank"/>
-
-                            <!-- Result Field with Placeholder -->
-                            <field name="result" placeholder="Enter Result"/>
-
-                            <field name="address" placeholder="Enter Address" string="School Address"/>
-                            <field name="school_description"/>
                         </group>
-                        <group>
-                            <field name="establish_date" placeholder="Enter Establishment Date" widget="date"/>
-                            <field name="open_date" placeholder="Enter Open Date"/>
-                            <field name="school_type" placeholder="Select School Type"/>
-                            <field name="documents" filename="document_name"/>
-                            <field name="document_name"/>
-                            <field name="auto_rank"/>
+
+                        <!-- Right Column: Additional Information -->
+                        <group class="o_group_half">
+                            <field name="school_rank" string="School Rank" placeholder="Enter School Rank"/>
+                            <field name="result" string="Result" placeholder="Enter Result"/>
                         </group>
                     </group>
+
+                    <!-- Notebook for Additional Sections -->
+                    <notebook>
+                        <!-- Tab 1: School Details -->
+                       <!-- Tab 1: School Details -->
+                        <page string="School Details">
+                            <form>
+                                <sheet>
+                                    <!-- Fields for School Details -->
+                                    <group>
+                                        <field name="establish_date" string="Establishment Date" widget="date"/>
+                                    </group>
+
+                                    <group>
+                                        <field name="open_date" string="Open Date" widget="datetime"/>
+                                    </group>
+
+                                    <group>
+                                        <field name="school_type" string="School Type"
+                                               placeholder="Select School Type" style="height:40px"/>
+                                    </group>
+                                </sheet>
+                            </form>
+                        </page>
+
+                       <!-- Tab 2: Address & Documents -->
+                        <page string="Address and Documents">
+                            <form>
+                                <sheet>
+                                    <!-- Fields for Address and Documents -->
+                                    <group>
+                                        <field name="address" string="School Address" placeholder="Enter Address"/>
+                                    </group>
+
+                                    <group>
+                                        <field name="documents" string="Documents" filename="document_name"/>
+                                    </group>
+
+                                    <group>
+                                        <field name="document_name" string="Document Name"/>
+                                    </group>
+                                </sheet>
+                            </form>
+                        </page>
+
+                        <!-- Tab 3: School Description -->
+                        <page string="Description">
+                            <label for="school_description"/>
+                            <field name="school_description" string="School Description"
+                                   placeholder="Enter School Description"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
+
 
 
     <record id="action_school_profile_menu" model="ir.actions.act_window">

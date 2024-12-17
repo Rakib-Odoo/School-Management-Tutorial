@@ -21,6 +21,7 @@ class SchoolStudent(models.Model):
          ('account.move', 'account.move')],
         string='Fees Reference'
     )
+    # add archived and unarchived
     active = fields.Boolean('Active', default=True)
 
     def write(self, values):
