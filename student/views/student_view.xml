@@ -20,6 +20,7 @@
                         <!-- hobby list checkboxes vabe show korte -->
                         <field name="hobby_list" widget="many2many_checkboxes"/>
                         <field name="ref_id"/>
+                        <field name="active"/>
                     </group>
                 </sheet>
             </form>
@@ -41,6 +42,7 @@
         <field name="name">school.student.inherit.form</field>
         <!-- jei model ke inherit kora hbe tar model name dite -->
         <field name="model">school.profile</field>
+        <!-- ref = module name.form er moddhe inherit korle form view id dite hbe -->
         <field name="inherit_id" ref="school.school_form_view"/>
         <field name="arch" type="xml">
             <!-- kon field er agey and pore bosbe tar jonno -->
