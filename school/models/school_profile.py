@@ -4,9 +4,9 @@ from odoo import api, fields, models
 class SchoolProfile(models.Model):
     _name = 'school.profile'
 
-    name = fields.Char(string='Name', help='This is a School Name')
-    email = fields.Char(string='Email')
-    phone = fields.Char(string='Phone')
+    name = fields.Char(string='Name', help='This is a School Name', default='First School')
+    email = fields.Char(string='Email', default='xyz@gmail.com')
+    phone = fields.Char(string='Phone', default='1234567890')
     offline_class = fields.Boolean(string='Offline Class')
     school_rank = fields.Integer(string='School Rank')
     result = fields.Float(string='Result', digits=(2, 3))
@@ -21,7 +21,7 @@ class SchoolProfile(models.Model):
         ('online', 'Online School'),
         ('boarding', 'Boarding School'),
         ('montessori', 'Montessori School'),
-    ], string='School Type')
+    ], string='School Type', default='private')
     documents = fields.Binary(string='Documents')
     document_name = fields.Char(string='File Name')
     school_description = fields.Html(string='School Description')
