@@ -39,12 +39,20 @@ class SchoolStudent(models.Model):
             default['name'] = _("%s (copy)") % (self.name)
         return super(SchoolStudent, self).copy(default)
 
+    def unlink(self):
+        for rec in self:
+            if rec.student_fees != 0:
+                raise UserError(_('You cannot delete this %s student profile'%rec.name))
+        res = super(SchoolStudent, self).unlink()
+        return res
+
 
 class SchoolProfile(models.Model):
     _inherit = 'school.profile'
 
     school_list = fields.One2many('school.student', 'school_id', string='School List', )
 
+    # override create method
     @api.model
     def create(self, vals):
         rtn = super(SchoolProfile, self).create(vals)

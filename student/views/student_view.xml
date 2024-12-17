@@ -71,6 +71,7 @@
                 <field name="school_id"/>
                 <field name="is_virtual_class"/>
                 <field name="school_address"/>
+                <field name="student_fees"/>
             </tree>
         </field>
     </record>
