@@ -61,9 +61,10 @@ class SchoolStudent(models.Model):
             else:
                 rec.age = 0
 
+    @api.model
     def create(self, vals):
         if vals.get('sl_no', _('New')) == _('New'):
-            vals['sl_no'] = self.env['ir.sequence'].next_by_code('sale.order') or _('New')
+            vals['sl_no'] = self.env['ir.sequence'].next_by_code('school.student') or _('New')
         result = super(SchoolStudent, self).create(vals)
         return result
 

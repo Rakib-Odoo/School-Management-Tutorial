@@ -13,6 +13,9 @@
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve"/>
                 </header>
                 <sheet>
+                    <h1>
+                        <field name="sl_no"/>
+                    </h1>
                     <field name="image" widget="image" class="oe_avatar"/>
                     <group>
                         <field name="name"/>
@@ -136,6 +139,7 @@
         <field name="model">school.student</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="sl_no"/>
                 <field name="name"/>
                 <field name="school_id"/>
                 <field name="is_virtual_class"/>

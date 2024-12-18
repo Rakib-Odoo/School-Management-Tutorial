@@ -8,6 +8,7 @@
     'depends': ['base','school','web','mail'],
     'data': [
         'security/ir.model.access.csv',
+        'data/student_sequence.xml',
         'views/menu_view.xml',
         'views/student_view.xml',
         'views/hobby_view.xml',
