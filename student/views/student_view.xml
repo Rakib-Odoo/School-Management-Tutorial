@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
                     <group>
                         <field name="name"/>
                         <!-- many2one field convert selection field -->
