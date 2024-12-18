@@ -18,12 +18,11 @@ class SchoolStudent(models.Model):
     #                           , string='Fees Reference')
     ref_id = fields.Reference(
         [('school.profile', 'school.profile'),
-         ('account.move', 'account.move')],
-        string='Fees Reference'
-    )
+         ('account.move', 'account.move')],string='Fees Reference')
     # add archived and unarchived
     active = fields.Boolean('Active', default=True)
 
+    # override write method
     def write(self, values):
         result = super(SchoolStudent, self).write(values)
         for record in self:
@@ -39,12 +38,15 @@ class SchoolStudent(models.Model):
             default['name'] = _("%s (copy)") % (self.name)
         return super(SchoolStudent, self).copy(default)
 
+    # override unlink method
     def unlink(self):
         for rec in self:
             if rec.student_fees != 0:
                 raise UserError(_('You cannot delete this %s student profile'%rec.name))
         res = super(SchoolStudent, self).unlink()
         return res
+
+
 
 
 class SchoolProfile(models.Model):

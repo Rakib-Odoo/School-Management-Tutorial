@@ -49,3 +49,8 @@ class SchoolProfile(models.Model):
                 rec.school_rank = 70
             else:
                 rec.school_rank = 0
+
+    # @api.model
+    # def name_create(self, name):
+    #     res = self.create({'name' : name})
+    #     return res.name_get()[0]
