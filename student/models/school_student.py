@@ -26,8 +26,8 @@ class SchoolStudent(models.Model):
     gender = fields.Selection([
         ('male','Male'),
         ('female','Female')
-    ], string='Gender')
-    date_of_birth = fields.Date(string='Date of Birth')
+    ], string='Gender', default='male')
+    date_of_birth = fields.Date(string='Date of Birth', default=date(2009,1,1))
     age = fields.Integer(string='Age', compute='compute_age')
 
     @api.onchange('date_of_birth')
