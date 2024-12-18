@@ -1,4 +1,5 @@
 from odoo import api, fields, models, _
+from datetime import date
 from odoo.exceptions import UserError
 
 
@@ -22,6 +23,22 @@ class SchoolStudent(models.Model):
     # add archived and unarchived
     active = fields.Boolean('Active', default=True)
     image = fields.Binary(string='Student Image')
+    gender = fields.Selection([
+        ('male','Male'),
+        ('female','Female')
+    ], string='Gender')
+    date_of_birth = fields.Date(string='Date of Birth')
+    age = fields.Integer(string='Age', compute='compute_age')
+
+    @api.onchange('date_of_birth')
+    def compute_age(self):
+        today = date.today()
+        for rec in self:
+            if rec.date_of_birth:
+                rec.age = today.year - rec.date_of_birth.year
+            else:
+                rec.age = 0
+
 
     # override write method
     def write(self, values):

@@ -23,6 +23,9 @@
                         <field name="hobby_list" widget="many2many_checkboxes"/>
                         <field name="ref_id"/>
                         <field name="active" invisible="1"/>
+                        <field name="gender"/>
+                        <field name="date_of_birth"/>
+                        <field name="age"/>
                     </group>
                 </sheet>
             </form>
@@ -63,6 +66,20 @@
         </field>
     </record>
 
+<!--     <record id="student_kanban_view" model="ir.ui.view">-->
+<!--        <field name="name">school.student.kanban</field>-->
+<!--        <field name="model">school.student</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <kanban>-->
+<!--                <field name="id"/>-->
+<!--                <field name="name"/>-->
+<!--                <field name="school_id"/>-->
+<!--                <field name="is_virtual_class"/>-->
+<!--                <field name="school_address"/>-->
+<!--                <field name="student_fees"/>-->
+<!--            </kanban>-->
+<!--        </field>-->
+<!--    </record>-->
 
     <record id="student_tree_view" model="ir.ui.view">
         <field name="name">school.student.tree</field>
@@ -81,7 +98,7 @@
     <record id="action_school_student" model="ir.actions.act_window">
         <field name="name">Students Info</field>
         <field name="res_model">school.student</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,kanban,form</field>
     </record>
 
     <menuitem id="students_details_menu" name="Students Info" parent="student_information"
