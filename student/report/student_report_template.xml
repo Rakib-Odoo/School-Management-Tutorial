@@ -26,13 +26,21 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <h1>Hello, how are you?</h1>
-<!--                        <span t-field="doc.name"></span>-->
-<!--                        <h1 t-field="doc.name"></h1>-->
-<!--                        <h2 t-field="doc.name"></h2>-->
-<!--                        <h3 t-field="doc.name"></h3>-->
-<!--                        <h4 t-field="doc.name"></h4>-->
-<!--                        <h5 t-field="doc.name"></h5>-->
-<!--                        <h6 t-field="doc.name"></h6>-->
+                        <h1 t-field="doc.name"></h1>
+                        <h2 t-field="doc.name"></h2>
+                        <h3 t-field="doc.name"></h3>
+                        <h4 t-field="doc.name"></h4>
+                        <h5 t-field="doc.name"></h5>
+                        <h6 t-field="doc.name"></h6>
+
+                        <!-- conditional statement topic -->
+                        <t t-if="doc.name == Rakib">
+                            <p>YES! This is <span t-esc="doc.name"/> </p>
+                        </t>
+                        <t t-else="">
+                            <p> NO! This is not Rakib</p>
+                            <p> YES! this is <span t-esc="doc.name"/> </p>
+                        </t>
                     </div>
                 </t>
             </t>
