@@ -37,6 +37,11 @@ class SchoolStudent(models.Model):
         ('approve', 'Approved'),
         ('cancel', 'Cancelled')
     ], string='Status')
+    sl_no = fields.Char(string='Sl No', copy=False, readonly=True,
+                       index=True, default=lambda self: _('New'))
+
+
+
 
     def action_draft(self):
         self.state = 'draft'
@@ -56,6 +61,11 @@ class SchoolStudent(models.Model):
             else:
                 rec.age = 0
 
+    def create(self, vals):
+        if vals.get('sl_no', _('New')) == _('New'):
+            vals['sl_no'] = self.env['ir.sequence'].next_by_code('sale.order') or _('New')
+        result = super(SchoolStudent, self).create(vals)
+        return result
 
     # override write method
     def write(self, values):
