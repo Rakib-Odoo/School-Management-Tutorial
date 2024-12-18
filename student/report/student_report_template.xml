@@ -41,6 +41,13 @@
                             <p> NO! This is not Rakib</p>
                             <p> YES! this is <span t-esc="doc.name"/> </p>
                         </t>
+
+                        <!-- looping statement topic -->
+                        <t t-foreach="doc.school_id" t-as="var">
+
+                            <!--print er jonno t-esc use kora hoi -->
+                            <h1 t-esc="var.name"/>
+                        </t>
                     </div>
                 </t>
             </t>
