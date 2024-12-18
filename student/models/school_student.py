@@ -29,6 +29,21 @@ class SchoolStudent(models.Model):
     ], string='Gender', default='male')
     date_of_birth = fields.Date(string='Date of Birth', default=date(2009,1,1))
     age = fields.Integer(string='Age', compute='compute_age')
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('confirm','Confirmed'),
+        ('approve', 'Approved'),
+        ('cancel', 'Cancelled')
+    ], string='Status')
+
+    def action_draft(self):
+        self.state = 'draft'
+    def action_confirm(self):
+        self.state = 'confirm'
+    def action_approve(self):
+        self.state = 'approve'
+    def action_cancel(self):
+        self.state = 'cancel'
 
     @api.onchange('date_of_birth')
     def compute_age(self):
