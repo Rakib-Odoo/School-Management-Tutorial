@@ -6,6 +6,8 @@ from odoo.exceptions import UserError
 class SchoolStudent(models.Model):
     _name = 'school.student'
     _description = 'School Student Information'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+
 
     name = fields.Char(string='Student Name')
     school_id = fields.Many2one('school.profile', string='School')
